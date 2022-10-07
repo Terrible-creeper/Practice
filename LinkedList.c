@@ -120,7 +120,7 @@ int main() {
                 scanf("%d",&deletedata);
                 delete_node(&head,deletedata);
                 break;
-			case 4:
+            case 4:
                 print_list(head,1);
                 break;
             default:
