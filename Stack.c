@@ -24,9 +24,13 @@ void push_node(NODE **start,int value) {
 void pop_node(NODE **start) {
 	NODE *current = *start;
 	*start = current->next;
-    printf("%d\n",current->data);
+	printf("POP out => %d\n",current->data);
 	free(current);
 	return;
+}
+
+int isEmpty(NODE *node) {
+    return node == NULL ?  1 : 0;
 }
 
 void print_list(NODE *node) {
@@ -53,7 +57,7 @@ int main() {
     NODE *head = NULL;
     while(1) {
         printf("\nNow Data: \n");
-        if(head == NULL) printf("NO DATA...\n"); else print_list(head);
+        if(isEmpty(head)) printf("NO DATA...\n"); else print_list(head);
         if(first == 1) first = 0;
         printf("\n(1) PUSH Data\n(2) POP Data\n(0) Exit\n=> ");
         scanf("%d",&selection);
@@ -68,10 +72,7 @@ int main() {
                 push_node(&head,data);
                 break;
             case 2:
-                if(head != NULL) {
-                    printf("POP out => ");
-                    pop_node(&head);
-                } else printf("Error...\n");
+                if(head != NULL) pop_node(&head); else printf("Error...\n");
                 break;
             default:
                 printf("Error...\n");
