@@ -1,0 +1,5 @@
+username: username
+scopes: user-read-currently-playing
+clientID: SelfCreateAt_https://developer.spotify.com/
+clientSecret: SelfCreateAt_https://developer.spotify.com/
+redirectURI: http://google.com/callback
